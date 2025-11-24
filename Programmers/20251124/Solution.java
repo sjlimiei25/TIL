@@ -1,12 +1,16 @@
+import java.util.LinkedHashSet;
+
 class Solution {
     public String solution(String my_string) {
-        String answer = "";
+        LinkedHashSet<Character> set = new LinkedHashSet<>();
         
-        for (int i=0; i<my_string.length(); i++) {
-            char ch = my_string.charAt(i);
-            if (answer.indexOf(ch) == -1) answer += ch;
+        for (char ch : my_string.toCharArray()) {
+            set.add(ch);
         }
         
-        return answer;
+        StringBuilder sb = new StringBuilder();
+        for(char ch : set) sb.append(ch);
+        
+        return sb.toString();
     }
 }
